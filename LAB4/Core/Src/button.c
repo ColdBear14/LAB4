@@ -30,15 +30,19 @@ void subKeyProcess(int index) {
 
 int getIndex(int index) {
 	switch(index){
+		case 0:
+			return HAL_GPIO_ReadPin(GPIOA, PA0_Pin);
+			break;
 		case 1:
-			return HAL_GPIO_ReadPin(BUTTON1_GPIO_Port, BUTTON1_Pin);
+			return HAL_GPIO_ReadPin(GPIOA, PA1_Pin);
 			break;
 		case 2:
-			return HAL_GPIO_ReadPin(BUTTON2_GPIO_Port, BUTTON2_Pin);
+			return HAL_GPIO_ReadPin(GPIOA, PA2_Pin);
 			break;
 		case 3:
-			return HAL_GPIO_ReadPin(BUTTON3_GPIO_Port, BUTTON3_Pin);
+			return HAL_GPIO_ReadPin(GPIOA, PA3_Pin);
 			break;
+
 		default:
 			break;
 	}

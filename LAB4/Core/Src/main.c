@@ -207,11 +207,17 @@ static void MX_GPIO_Init(void)
                           |PB15_Pin|PB3_Pin|PB4_Pin|PB5_Pin
                           |PB6_Pin|PB7_Pin|PB8_Pin|PB9_Pin, GPIO_PIN_RESET);
 
-  /*Configure GPIO pins : BUTTON1_Pin BUTTON2_Pin BUTTON3_Pin */
-  GPIO_InitStruct.Pin = BUTTON1_Pin|BUTTON2_Pin|BUTTON3_Pin;
+  /*Configure GPIO pins : PA0_Pin PA1_Pin PA2_Pin */
+  GPIO_InitStruct.Pin = PA0_Pin|PA1_Pin|PA2_Pin;
   GPIO_InitStruct.Mode = GPIO_MODE_INPUT;
   GPIO_InitStruct.Pull = GPIO_PULLUP;
   HAL_GPIO_Init(GPIOA, &GPIO_InitStruct);
+
+  /*Configure GPIO pin : PA3_Pin */
+  GPIO_InitStruct.Pin = PA3_Pin;
+  GPIO_InitStruct.Mode = GPIO_MODE_INPUT;
+  GPIO_InitStruct.Pull = GPIO_PULLDOWN;
+  HAL_GPIO_Init(PA3_GPIO_Port, &GPIO_InitStruct);
 
   /*Configure GPIO pins : PA4_Pin PA5_Pin PA6_Pin PA7_Pin
                            PA8_Pin PA9_Pin PA10_Pin PA11_Pin
