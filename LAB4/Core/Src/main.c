@@ -94,9 +94,15 @@ int main(void)
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
+	SCH_Add_Task(timer_red, 0, 1000);
+
+
+
+
   while (1)
   {
     /* USER CODE END WHILE */
+SCH_Dispatch_Tasks();
 
     /* USER CODE BEGIN 3 */
   }
@@ -216,7 +222,7 @@ static void MX_GPIO_Init(void)
   /*Configure GPIO pin : PA3_Pin */
   GPIO_InitStruct.Pin = PA3_Pin;
   GPIO_InitStruct.Mode = GPIO_MODE_INPUT;
-  GPIO_InitStruct.Pull = GPIO_PULLDOWN;
+  GPIO_InitStruct.Pull = GPIO_NOPULL;
   HAL_GPIO_Init(PA3_GPIO_Port, &GPIO_InitStruct);
 
   /*Configure GPIO pins : PA4_Pin PA5_Pin PA6_Pin PA7_Pin
@@ -247,7 +253,8 @@ static void MX_GPIO_Init(void)
 
 /* USER CODE BEGIN 4 */
 void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim) {
-
+SCH_Update();
+getKeyInput();
 }
 /* USER CODE END 4 */
 

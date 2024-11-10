@@ -33,6 +33,9 @@ extern "C" {
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 #include "scheduler.h"
+#include "button.h"
+#include "timer.h"
+#include "led_control.h"
 /* USER CODE END Includes */
 
 /* Exported types ------------------------------------------------------------*/

@@ -13,7 +13,9 @@ sTask SCH_tasks_G[SCH_MAX_TASK];
 uint8_t current_index_task = 0;
 
 void SCH_Init(void) {
-	current_index_task = 0;
+	for(int i=0;i<current_index_task;i++){
+		SCH_Delete(i);
+	}
 }
 
 void SCH_Add_Task(void (*pFunction)(), uint32_t DELAY, uint32_t PERIOD) {
@@ -54,7 +56,10 @@ void SCH_Dispatch_Tasks(void) {
 void SCH_Delete(uint32_t ID) {
 	uint32_t i;
 	for ( i = ID; i < SCH_MAX_TASK  ; i++) {
-		SCH_tasks_G[i] = SCH_tasks_G[i+1];
+		SCH_tasks_G[i].pTask = SCH_tasks_G[i+1].pTask;
+		SCH_tasks_G[i].Delay = SCH_tasks_G[i+1].Delay ;
+		SCH_tasks_G[i].Period = SCH_tasks_G[i+1].Period ;
+		SCH_tasks_G[i].RunMe = 0;
 	}
 }
 
