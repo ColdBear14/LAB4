@@ -95,7 +95,9 @@ int main(void)
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
 	SCH_Add_Task(timer_red, 0, 1000);
-
+	SCH_Add_Task(getKeyInput, 0, 10);
+	SCH_Add_Task(RED0, 0, 500);
+	SCH_Add_Task(RED1, 0, 1000);
 
 
 
@@ -254,7 +256,7 @@ static void MX_GPIO_Init(void)
 /* USER CODE BEGIN 4 */
 void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim) {
 SCH_Update();
-getKeyInput();
+
 }
 /* USER CODE END 4 */
 

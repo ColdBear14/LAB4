@@ -14,4 +14,10 @@ void RED1() {
 	if (IsButtonPress(0) == 1) {
 		HAL_GPIO_TogglePin(GPIOB, PB15_Pin);
 	}
+	if (IsButtonPress(1) == 1) {
+		HAL_GPIO_TogglePin(GPIOB, PB15_Pin);
+	}
+	if (IsButtonPress(2) == 1) {
+		HAL_GPIO_TogglePin(GPIOB, PB15_Pin);
+	}
 }
