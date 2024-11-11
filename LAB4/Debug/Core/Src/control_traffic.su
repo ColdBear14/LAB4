@@ -1,0 +1,3 @@
+control_traffic.c:19:6:displayTraffic	8	static
+control_traffic.c:54:6:status_LED_A	4	static
+control_traffic.c:91:6:status_LED_B	4	static

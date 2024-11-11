@@ -6,41 +6,62 @@
 # Add inputs and outputs from these tool invocations to the build variables 
 C_SRCS += \
 ../Core/Src/button.c \
+../Core/Src/control_7seg.c \
+../Core/Src/control_traffic.c \
+../Core/Src/fsm_7seg.c \
+../Core/Src/fsm_automatic.c \
+../Core/Src/fsm_manual.c \
+../Core/Src/fsm_setting.c \
+../Core/Src/global.c \
 ../Core/Src/led_control.c \
 ../Core/Src/main.c \
 ../Core/Src/scheduler.c \
+../Core/Src/software_timer.c \
 ../Core/Src/stm32f1xx_hal_msp.c \
 ../Core/Src/stm32f1xx_it.c \
 ../Core/Src/syscalls.c \
 ../Core/Src/sysmem.c \
 ../Core/Src/system_stm32f1xx.c \
-../Core/Src/time_LED.c \
 ../Core/Src/timer.c 
 
 OBJS += \
 ./Core/Src/button.o \
+./Core/Src/control_7seg.o \
+./Core/Src/control_traffic.o \
+./Core/Src/fsm_7seg.o \
+./Core/Src/fsm_automatic.o \
+./Core/Src/fsm_manual.o \
+./Core/Src/fsm_setting.o \
+./Core/Src/global.o \
 ./Core/Src/led_control.o \
 ./Core/Src/main.o \
 ./Core/Src/scheduler.o \
+./Core/Src/software_timer.o \
 ./Core/Src/stm32f1xx_hal_msp.o \
 ./Core/Src/stm32f1xx_it.o \
 ./Core/Src/syscalls.o \
 ./Core/Src/sysmem.o \
 ./Core/Src/system_stm32f1xx.o \
-./Core/Src/time_LED.o \
 ./Core/Src/timer.o 
 
 C_DEPS += \
 ./Core/Src/button.d \
+./Core/Src/control_7seg.d \
+./Core/Src/control_traffic.d \
+./Core/Src/fsm_7seg.d \
+./Core/Src/fsm_automatic.d \
+./Core/Src/fsm_manual.d \
+./Core/Src/fsm_setting.d \
+./Core/Src/global.d \
 ./Core/Src/led_control.d \
 ./Core/Src/main.d \
 ./Core/Src/scheduler.d \
+./Core/Src/software_timer.d \
 ./Core/Src/stm32f1xx_hal_msp.d \
 ./Core/Src/stm32f1xx_it.d \
 ./Core/Src/syscalls.d \
 ./Core/Src/sysmem.d \
 ./Core/Src/system_stm32f1xx.d \
-./Core/Src/time_LED.d \
 ./Core/Src/timer.d 
 
 

@@ -96,17 +96,24 @@ int main(void)
   /* USER CODE BEGIN WHILE */
 	SCH_Add_Task(timer_red, 0, 1000);
 	SCH_Add_Task(getKeyInput, 0, 10);
-	SCH_Add_Task(RED0, 0, 500);
-	SCH_Add_Task(RED1, 0, 1000);
+
+
+	SCH_Add_Task(update_switch, 0, 500);
+
+	SCH_Add_Task(timerun, 0, 10);
+	SCH_Add_Task(fsm_7seg_run, 0, 1000);
+	SCH_Add_Task(fsm_automatic_run, 0, 10);
+	SCH_Add_Task(fsm_mode, 0, 10);
+	SCH_Add_Task(fsm_manual_run, 0, 10);
 
 
 
   while (1)
   {
     /* USER CODE END WHILE */
-SCH_Dispatch_Tasks();
 
     /* USER CODE BEGIN 3 */
+	  SCH_Dispatch_Tasks();
   }
   /* USER CODE END 3 */
 }
@@ -201,13 +208,15 @@ static void MX_GPIO_Init(void)
   GPIO_InitTypeDef GPIO_InitStruct = {0};
 
   /* GPIO Ports Clock Enable */
+  __HAL_RCC_GPIOC_CLK_ENABLE();
   __HAL_RCC_GPIOA_CLK_ENABLE();
   __HAL_RCC_GPIOB_CLK_ENABLE();
 
   /*Configure GPIO pin Output Level */
-  HAL_GPIO_WritePin(GPIOA, PA4_Pin|PA5_Pin|PA6_Pin|PA7_Pin
-                          |PA8_Pin|PA9_Pin|PA10_Pin|PA11_Pin
-                          |PA12_Pin|PA13_Pin|PA14_Pin|PA15_Pin, GPIO_PIN_RESET);
+  HAL_GPIO_WritePin(GPIOA, PA3_Pin|PA4_Pin|PA5_Pin|PA6_Pin
+                          |PA7_Pin|PA8_Pin|PA9_Pin|PA10_Pin
+                          |PA11_Pin|PA12_Pin|PA13_Pin|PA14_Pin
+                          |PA15_Pin, GPIO_PIN_RESET);
 
   /*Configure GPIO pin Output Level */
   HAL_GPIO_WritePin(GPIOB, PB0_Pin|PB1_Pin|PB2_Pin|PB10_Pin
@@ -215,24 +224,26 @@ static void MX_GPIO_Init(void)
                           |PB15_Pin|PB3_Pin|PB4_Pin|PB5_Pin
                           |PB6_Pin|PB7_Pin|PB8_Pin|PB9_Pin, GPIO_PIN_RESET);
 
+  /*Configure GPIO pin : BUTTON0_Pin */
+  GPIO_InitStruct.Pin = BUTTON0_Pin;
+  GPIO_InitStruct.Mode = GPIO_MODE_INPUT;
+  GPIO_InitStruct.Pull = GPIO_PULLUP;
+  HAL_GPIO_Init(BUTTON0_GPIO_Port, &GPIO_InitStruct);
+
   /*Configure GPIO pins : PA0_Pin PA1_Pin PA2_Pin */
   GPIO_InitStruct.Pin = PA0_Pin|PA1_Pin|PA2_Pin;
   GPIO_InitStruct.Mode = GPIO_MODE_INPUT;
   GPIO_InitStruct.Pull = GPIO_PULLUP;
   HAL_GPIO_Init(GPIOA, &GPIO_InitStruct);
 
-  /*Configure GPIO pin : PA3_Pin */
-  GPIO_InitStruct.Pin = PA3_Pin;
-  GPIO_InitStruct.Mode = GPIO_MODE_INPUT;
-  GPIO_InitStruct.Pull = GPIO_NOPULL;
-  HAL_GPIO_Init(PA3_GPIO_Port, &GPIO_InitStruct);
-
-  /*Configure GPIO pins : PA4_Pin PA5_Pin PA6_Pin PA7_Pin
-                           PA8_Pin PA9_Pin PA10_Pin PA11_Pin
-                           PA12_Pin PA13_Pin PA14_Pin PA15_Pin */
-  GPIO_InitStruct.Pin = PA4_Pin|PA5_Pin|PA6_Pin|PA7_Pin
-                          |PA8_Pin|PA9_Pin|PA10_Pin|PA11_Pin
-                          |PA12_Pin|PA13_Pin|PA14_Pin|PA15_Pin;
+  /*Configure GPIO pins : PA3_Pin PA4_Pin PA5_Pin PA6_Pin
+                           PA7_Pin PA8_Pin PA9_Pin PA10_Pin
+                           PA11_Pin PA12_Pin PA13_Pin PA14_Pin
+                           PA15_Pin */
+  GPIO_InitStruct.Pin = PA3_Pin|PA4_Pin|PA5_Pin|PA6_Pin
+                          |PA7_Pin|PA8_Pin|PA9_Pin|PA10_Pin
+                          |PA11_Pin|PA12_Pin|PA13_Pin|PA14_Pin
+                          |PA15_Pin;
   GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
   GPIO_InitStruct.Pull = GPIO_NOPULL;
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;

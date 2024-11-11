@@ -39,10 +39,6 @@ int getIndex(int index) {
 		case 2:
 			return HAL_GPIO_ReadPin(GPIOA, PA2_Pin);
 			break;
-		case 3:
-			return HAL_GPIO_ReadPin(GPIOA, PA3_Pin);
-			break;
-
 		default:
 			break;
 	}
@@ -62,6 +58,7 @@ void getKeyInput() {
 				if (KeyReg2[i] == PRESS_STATE) {
 					//todo
 					subKeyProcess(i);
+					HAL_GPIO_TogglePin(GPIOB, PB14_Pin);
 					TimerForKeyPress[i] = 300;
 
 				}

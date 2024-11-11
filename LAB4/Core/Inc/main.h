@@ -36,6 +36,14 @@ extern "C" {
 #include "button.h"
 #include "timer.h"
 #include "led_control.h"
+#include "global.h"
+#include "control_7seg.h"
+#include "control_traffic.h"
+#include "fsm_automatic.h"
+#include "software_timer.h"
+#include "fsm_7seg.h"
+#include "fsm_setting.h"
+#include "fsm_manual.h"
 /* USER CODE END Includes */
 
 /* Exported types ------------------------------------------------------------*/
@@ -61,6 +69,8 @@ void Error_Handler(void);
 /* USER CODE END EFP */
 
 /* Private defines -----------------------------------------------------------*/
+#define BUTTON0_Pin GPIO_PIN_13
+#define BUTTON0_GPIO_Port GPIOC
 #define PA0_Pin GPIO_PIN_0
 #define PA0_GPIO_Port GPIOA
 #define PA1_Pin GPIO_PIN_1

@@ -1,0 +1,7 @@
+control_7seg.c:14:6:update_switch	4	static
+control_7seg.c:20:6:display7SEGA	16	static
+control_7seg.c:81:6:display7SEGB	16	static
+control_7seg.c:137:6:update_indexA	16	static
+control_7seg.c:147:6:update_indexB	16	static
+control_7seg.c:157:6:update_7seg_A	8	static
+control_7seg.c:174:6:update_7seg_B	8	static

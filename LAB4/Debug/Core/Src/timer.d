@@ -24,7 +24,11 @@ Core/Src/timer.o: ../Core/Src/timer.c ../Core/Inc/timer.h \
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim.h \
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim_ex.h \
  ../Core/Inc/scheduler.h ../Core/Inc/button.h ../Core/Inc/timer.h \
- ../Core/Inc/led_control.h
+ ../Core/Inc/led_control.h ../Core/Inc/global.h \
+ ../Core/Inc/control_7seg.h ../Core/Inc/control_traffic.h \
+ ../Core/Inc/fsm_automatic.h ../Core/Inc/software_timer.h \
+ ../Core/Inc/fsm_7seg.h ../Core/Inc/fsm_setting.h \
+ ../Core/Inc/fsm_manual.h
 
 ../Core/Inc/timer.h:
 
@@ -85,3 +89,19 @@ Core/Src/timer.o: ../Core/Src/timer.c ../Core/Inc/timer.h \
 ../Core/Inc/timer.h:
 
 ../Core/Inc/led_control.h:
+
+../Core/Inc/global.h:
+
+../Core/Inc/control_7seg.h:
+
+../Core/Inc/control_traffic.h:
+
+../Core/Inc/fsm_automatic.h:
+
+../Core/Inc/software_timer.h:
+
+../Core/Inc/fsm_7seg.h:
+
+../Core/Inc/fsm_setting.h:
+
+../Core/Inc/fsm_manual.h:
