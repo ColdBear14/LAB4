@@ -106,6 +106,7 @@ int main(void)
 	SCH_Add_Task(fsm_mode, 0, 10);
 	SCH_Add_Task(fsm_manual_run, 0, 10);
 
+	SCH_Add_Task(update_7seg_B, 0, 250);
 
 
   while (1)

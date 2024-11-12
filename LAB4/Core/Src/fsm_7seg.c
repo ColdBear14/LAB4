@@ -18,6 +18,7 @@ int count_YELLOW = 2 ;
 void fsm_7segA() {
 	switch (fsm_status_A) {
 	case FSM:
+		fsm_status_A= FSM_RED;
 		break;
 	case FSM_RED:
 		if (countDownA <= 0) {
@@ -53,6 +54,7 @@ void fsm_7segA() {
 void fsm_7segB() {
 	switch (fsm_status_B) {
 	case FSM:
+	fsm_status_B= FSM_GREEN;
 		break;
 	case FSM_GREEN:
 		if(countDownB <=0){

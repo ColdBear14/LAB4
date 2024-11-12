@@ -55,6 +55,7 @@ void fsm_automatic_run_B(){
 			break;
 		case AUTO_GREEN:
 			displayTraffic();
+
 			if (timer_flag[2] == 1) {
 				status_B = AUTO_YELLOW;
 				setTimer(2, YELLOW_Timer);
