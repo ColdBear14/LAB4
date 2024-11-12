@@ -1,8 +1,9 @@
-control_7seg.c:14:6:update_switch	4	static
-control_7seg.c:19:6:clear	8	static
-control_7seg.c:33:6:display7SEGA	16	static
-control_7seg.c:86:6:display7SEGB	16	static
-control_7seg.c:133:6:update_indexA	16	static
-control_7seg.c:143:6:update_indexB	16	static
-control_7seg.c:154:6:update_7seg_A	8	static
-control_7seg.c:172:6:update_7seg_B	8	static
+control_7seg.c:15:6:update_switch	4	static
+control_7seg.c:22:6:clearA	8	static
+control_7seg.c:33:6:clearB	8	static
+control_7seg.c:39:6:display7SEGA	16	static
+control_7seg.c:90:6:display7SEGB	16	static
+control_7seg.c:135:6:update_indexA	16	static
+control_7seg.c:145:6:update_indexB	16	static
+control_7seg.c:156:6:update_7seg_A	8	static
+control_7seg.c:174:6:update_7seg_B	8	static

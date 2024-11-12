@@ -7,39 +7,43 @@
 
 #include "fsm_automatic.h"
 
-int RED_Timer = 5000;
-int YELLOW_Timer = 2000;
-int GREEN_Timer = 3000;
+int RED_Timer = 5;
+int YELLOW_Timer = 2;
+int GREEN_Timer = 3;
+
+int Count_LED_A;
+int Count_LED_B;
 
 
 void fsm_automatic_run_A(){
-	status_LED_A();
+
 	switch (status_A) {
-		case INIT:
-			status_A = AUTO_RED;
-			setTimer(1, RED_Timer);
-			break;
 		case AUTO_RED:
-			displayTraffic();
-			if (timer_flag[1] == 1) {
+			if(Count_LED_A <= 0 ){
 				status_A = AUTO_GREEN;
-				setTimer(1, GREEN_Timer);
+				Count_LED_A = GREEN_Timer;
 			}
+			status_LED_A();
+			displayTraffic();
+				Count_LED_A--;
 			break;
 		case AUTO_GREEN:
-			displayTraffic();
-			if (timer_flag[1] == 1) {
+			if(Count_LED_A <= 0 ){
 				status_A = AUTO_YELLOW;
-				setTimer(1, YELLOW_Timer);
+				Count_LED_A = YELLOW_Timer;
 			}
-
+			status_LED_A();
+			displayTraffic();
+				Count_LED_A--;
 			break;
 		case AUTO_YELLOW:
-			displayTraffic();
-			if (timer_flag[1] == 1) {
-				status_A = AUTO_RED;
-				setTimer(1, RED_Timer);
+			if(Count_LED_A <= 0 ){
+				status_A= AUTO_RED;
+				Count_LED_A = RED_Timer;
 			}
+			status_LED_A();
+			displayTraffic();
+				Count_LED_A--;
 			break;
 		default:
 			break;
@@ -47,35 +51,33 @@ void fsm_automatic_run_A(){
 }
 
 void fsm_automatic_run_B(){
-	status_LED_B();
 	switch (status_B) {
-		case INIT:
-			status_B = AUTO_GREEN;
-			setTimer(2, GREEN_Timer);
-			break;
 		case AUTO_GREEN:
-			displayTraffic();
-
-			if (timer_flag[2] == 1) {
-				status_B = AUTO_YELLOW;
-				setTimer(2, YELLOW_Timer);
+			if(Count_LED_B <= 0 ){
+				status_B= AUTO_YELLOW;
+				Count_LED_B = YELLOW_Timer;
 			}
-
+			status_LED_B();
+			displayTraffic();
+				Count_LED_B--;
 			break;
 		case AUTO_YELLOW:
-			displayTraffic();
-			if (timer_flag[2] == 1) {
-				status_B = AUTO_RED;
-				setTimer(2, RED_Timer);
+			if(Count_LED_B <= 0 ){
+				status_B= AUTO_RED;
+				Count_LED_B = RED_Timer;
 			}
-
+			status_LED_B();
+			displayTraffic();
+				Count_LED_B--;
 			break;
 		case AUTO_RED:
-			displayTraffic();
-			if (timer_flag[2] == 1) {
-				status_B = AUTO_GREEN;
-				setTimer(2, GREEN_Timer);
+			if(Count_LED_B <= 0 ){
+				status_B= AUTO_GREEN;
+				Count_LED_B = GREEN_Timer;
 			}
+			status_LED_B();
+			displayTraffic();
+				Count_LED_B--;
 
 			break;
 		default:

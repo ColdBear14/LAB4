@@ -9,15 +9,18 @@
 #define INC_FSM_7SEG_H_
 #include "main.h"
 
-extern int countDownA;
-extern int countDownB;
+int countDownA;
+int countDownB;
 
-extern int count_RED;
-extern int count_GREEN;
-extern int count_YELLOW;
 
-extern void fsm_7seg_run();
-extern void fsm_7segA();
-extern void fsm_7segB();
+
+void fsm_7seg_run();
+void fsm_7segA();
+void fsm_7segB();
+
+void display_fsm_7seg();
+void display_fsm_7segA();
+void display_fsm_7segB();
+
 
 #endif /* INC_FSM_7SEG_H_ */

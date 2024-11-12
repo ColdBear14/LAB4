@@ -16,7 +16,6 @@
 #define MODE3 3
 #define MODE4 4
 
-#define INIT 11
 #define AUTO_RED 12
 #define AUTO_YELLOW 13
 #define AUTO_GREEN 14
@@ -25,7 +24,8 @@
 #define MAN_YELLOW 23
 #define MAN_GREEN 24
 
-#define FSM 31
+
+#define FSM_MAN 31
 #define FSM_RED 32
 #define FSM_YELLOW 33
 #define FSM_GREEN 34

@@ -14,7 +14,9 @@ extern int buffer_indexA[2];
 extern int buffer_indexB[2];
 
 void update_switch();
-void clear();
+
+void clearA();
+void clearB();
 
 extern void display7SEGA(int index);
 extern void display7SEGB(int index);
@@ -25,7 +27,6 @@ extern void update_indexB(int index);
 extern void update_7seg_A();
 extern void update_7seg_B();
 
-void update_7seg();
 
 
 #endif /* INC_CONTROL_7SEG_H_ */

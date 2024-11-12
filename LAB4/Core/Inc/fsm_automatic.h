@@ -16,6 +16,9 @@ extern int RED_Timer ;
 extern int YELLOW_Timer ;
 extern int GREEN_Timer ;
 
+int Count_LED_A;
+int Count_LED_B;
+
 extern void status_LEDA();
 extern void status_LEDB();
 

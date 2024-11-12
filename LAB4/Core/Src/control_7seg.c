@@ -11,12 +11,15 @@ int buffer_indexA[2];
 int buffer_indexB[2];
 int switch_7seg=0;
 
+
 void update_switch(){
-			++switch_7seg;
+			switch_7seg++;
+
 			if(switch_7seg >1) switch_7seg = 0;
+
 }
 
-void clear(){
+void clearA(){
 	HAL_GPIO_WritePin(GPIOB, PB0_Pin, SET);
 	HAL_GPIO_WritePin(GPIOB, PB1_Pin, SET);
 	HAL_GPIO_WritePin(GPIOB, PB2_Pin, SET);
@@ -25,6 +28,9 @@ void clear(){
 	HAL_GPIO_WritePin(GPIOB, PB5_Pin, SET);
 	HAL_GPIO_WritePin(GPIOB, PB6_Pin, SET);
 
+}
+
+void clearB(){
 	HAL_GPIO_WritePin(GPIOB, PB13_Pin, SET);
 	HAL_GPIO_WritePin(GPIOB, PB7_Pin | PB8_Pin | PB9_Pin, SET);
 	HAL_GPIO_WritePin(GPIOB, PB10_Pin | PB11_Pin | PB12_Pin, SET);
@@ -45,9 +51,13 @@ void display7SEGA(int index) {
 		break;
 	case 2:
 		HAL_GPIO_WritePin(GPIOB, PB3_Pin | PB4_Pin, RESET);
+		HAL_GPIO_WritePin(GPIOB, PB0_Pin | PB1_Pin, RESET);
+		HAL_GPIO_WritePin(GPIOB, PB6_Pin , RESET);
 		break;
 	case 3:
 		HAL_GPIO_WritePin(GPIOB, PB3_Pin | PB6_Pin, RESET);
+		HAL_GPIO_WritePin(GPIOB, PB0_Pin | PB1_Pin, RESET);
+		HAL_GPIO_WritePin(GPIOB, PB2_Pin, RESET);
 		break;
 	case 4:
 		HAL_GPIO_WritePin(GPIOB, PB1_Pin | PB2_Pin, RESET);
@@ -65,13 +75,7 @@ void display7SEGA(int index) {
 		HAL_GPIO_WritePin(GPIOB, PB0_Pin | PB1_Pin | PB2_Pin, RESET);
 		break;
 	case 8:
-		HAL_GPIO_WritePin(GPIOB, PB0_Pin, RESET);
-		HAL_GPIO_WritePin(GPIOB, PB1_Pin, RESET);
-		HAL_GPIO_WritePin(GPIOB, PB2_Pin, RESET);
-		HAL_GPIO_WritePin(GPIOB, PB3_Pin, RESET);
-		HAL_GPIO_WritePin(GPIOB, PB4_Pin, RESET);
-		HAL_GPIO_WritePin(GPIOB, PB5_Pin, RESET);
-		HAL_GPIO_WritePin(GPIOB, PB6_Pin, RESET);
+
 		break;
 	case 9:
 		HAL_GPIO_WritePin(GPIOB, PB0_Pin | PB1_Pin | PB2_Pin, RESET);
@@ -116,9 +120,7 @@ void display7SEGB(int index) {
 		HAL_GPIO_WritePin(GPIOB, PB7_Pin | PB8_Pin | PB9_Pin, RESET);
 		break;
 	case 8:
-		HAL_GPIO_WritePin(GPIOB, PB11_Pin, RESET);
-		HAL_GPIO_WritePin(GPIOB, PB7_Pin | PB8_Pin | PB9_Pin, RESET);
-		HAL_GPIO_WritePin(GPIOB, PB10_Pin | PB13_Pin | PB12_Pin, RESET);
+
 		break;
 	case 9:
 		HAL_GPIO_WritePin(GPIOB, PB7_Pin | PB8_Pin | PB9_Pin, RESET);
@@ -152,7 +154,7 @@ void update_indexB(int index) {
 
 
 void update_7seg_A() {
-	clear();
+	clearA();
 	switch (switch_7seg) {
 	case 0:
 		display7SEGA(buffer_indexA[1]);
@@ -170,7 +172,7 @@ void update_7seg_A() {
 }
 
 void update_7seg_B() {
-	clear();
+	clearB();
 	switch (switch_7seg) {
 	case 0:
 		display7SEGB(buffer_indexB[1]);

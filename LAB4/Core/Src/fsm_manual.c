@@ -14,13 +14,15 @@ void fsm_manual_run_A() {
 	switch (status_A) {
 	case MAN_RED:
 		displayTraffic();
-		update_indexA(count_RED);
+		update_indexA(RED_Timer + countTemp );
 		break;
 	case MAN_GREEN:
 		displayTraffic();
+		update_indexA(GREEN_Timer + countTemp );
 		break;
 	case MAN_YELLOW:
 		displayTraffic();
+		update_indexA(YELLOW_Timer + countTemp );
 		break;
 	default:
 		break;

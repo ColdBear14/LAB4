@@ -1,9 +1,9 @@
 /*
- * scheduler.c
- *
- *  Created on: Nov 9, 2024
- *      Author: Hy
- */
+ * scheduler.c
+ *
+ *  Created on: Nov 9, 2024
+ *      Author: Hy
+ */
 
 #include "scheduler.h"
 
@@ -55,11 +55,10 @@ void SCH_Dispatch_Tasks(void) {
 
 void SCH_Delete(uint32_t ID) {
 	uint32_t i;
-	for ( i = ID; i < SCH_MAX_TASK  ; i++) {
+	for ( i = ID; i < SCH_MAX_TASK; i++) {
 		SCH_tasks_G[i].pTask = SCH_tasks_G[i+1].pTask;
 		SCH_tasks_G[i].Delay = SCH_tasks_G[i+1].Delay ;
 		SCH_tasks_G[i].Period = SCH_tasks_G[i+1].Period ;
 		SCH_tasks_G[i].RunMe = 0;
 	}
 }
-
