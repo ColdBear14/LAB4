@@ -14,7 +14,6 @@ int switch_7seg=0;
 
 void update_switch(){
 			switch_7seg++;
-
 			if(switch_7seg >1) switch_7seg = 0;
 
 }

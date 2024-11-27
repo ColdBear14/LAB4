@@ -98,14 +98,13 @@ int main(void)
 	SCH_Add_Task(getKeyInput, 0, 10);
 
 
-	SCH_Add_Task(update_switch, 0, 500);
+	SCH_Add_Task(update_switch, 0, 250);
 	SCH_Add_Task(display_fsm_7seg, 0, 200);
 
 
 	SCH_Add_Task(fsm_7seg_run, 0, 1000);
 	SCH_Add_Task(fsm_automatic_run, 0, 1000);
 	SCH_Add_Task(fsm_mode, 0, 1000);
-	SCH_Add_Task(fsm_manual_run, 0, 1000);
 
 
 

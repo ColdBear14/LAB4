@@ -21,6 +21,7 @@ void countPressButton1(){
 
 void fsm_mode(){
 	countPressButton1();
+	fsm_manual_run();
 	switch(status_mode){
 	case MODE0:
 		status_mode = MODE1;
@@ -52,7 +53,7 @@ void fsm_mode(){
 		}
 		if(IsButtonPress(1) == 1){
 			// add value
-			countTemp+=2;
+			countTemp+=1;
 		}
 		if(IsButtonPress(2) == 1){
 			//set value
@@ -70,7 +71,7 @@ void fsm_mode(){
 		}
 		if(IsButtonPress(1) == 1){
 			// add value
-			countTemp+=2;
+			countTemp+=1;
 		}
 		if(IsButtonPress(2) == 1){
 			//set value
@@ -88,7 +89,7 @@ void fsm_mode(){
 		}
 		if(IsButtonPress(1) == 1){
 			// add value
-			countTemp+=2;
+			countTemp+=1;
 		}
 		if(IsButtonPress(2) == 1){
 			//set value
