@@ -103,7 +103,6 @@ int main(void)
 
 
 	SCH_Add_Task(fsm_7seg_run, 0, 1000);
-	SCH_Add_Task(fsm_automatic_run, 0, 1000);
 	SCH_Add_Task(fsm_mode, 0, 1000);
 
 

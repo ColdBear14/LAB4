@@ -22,6 +22,7 @@ void countPressButton1(){
 void fsm_mode(){
 	countPressButton1();
 	fsm_manual_run();
+	fsm_automatic_run();
 	switch(status_mode){
 	case MODE0:
 		status_mode = MODE1;
