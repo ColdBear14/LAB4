@@ -55,6 +55,7 @@ void SCH_Dispatch_Tasks(void) {
 
 void SCH_Delete(uint32_t ID) {
 	uint32_t i;
+	current_index_task--;
 	for ( i = ID; i < SCH_MAX_TASK; i++) {
 		SCH_tasks_G[i].pTask = SCH_tasks_G[i+1].pTask;
 		SCH_tasks_G[i].Delay = SCH_tasks_G[i+1].Delay ;
