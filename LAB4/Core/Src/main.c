@@ -94,6 +94,7 @@ int main(void)
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
+	SCH_Init();
 	SCH_Add_Task(timer_red, 0, 1000);
 	SCH_Add_Task(getKeyInput, 0, 10);
 

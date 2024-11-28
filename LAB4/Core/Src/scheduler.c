@@ -13,7 +13,7 @@ sTask SCH_tasks_G[SCH_MAX_TASK];
 uint8_t current_index_task = 0;
 
 void SCH_Init(void) {
-	for(int i=0;i<current_index_task;i++){
+	for(int i=0;i<SCH_MAX_TASK;i++){
 		SCH_Delete(i);
 	}
 }
